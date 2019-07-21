@@ -9,8 +9,6 @@ public class HW4_Ch7 {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		
-		MaxVolumeFinder maxVol = new MaxVolumeFinder();
 
 		double length;
 		double width;
@@ -23,13 +21,10 @@ public class HW4_Ch7 {
 		width = scan.nextDouble();
 		
 		//	find max volume
-		maxVol.setLength(length);
-		maxVol.setWidth(width);
-		maxVol.findMax();				//	Also possible to do
-		volume = maxVol.getVolume();	//	maxVol.findMax(length, width),
-										//	would not require lines 26 and 27
-		
-
+		MaxVolumeFinder maxVol = new MaxVolumeFinder(length, width);
+		maxVol.findMax();			
+		volume = maxVol.getVolume();
+									
 		//outputs
 		System.out.printf("Length of square sides: %.2f\n", maxVol.getsqrSide());
 		System.out.printf("Max volume of box: %.2f", volume);

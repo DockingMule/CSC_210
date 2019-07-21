@@ -1,10 +1,15 @@
 
 public class MaxVolumeFinder {
-	private static double width;
-	private static double length;
-	private static double volume;
-	private static double sqrSide;
+	private double width;
+	private double length;
+	private double volume;
+	private double sqrSide;
 	
+public MaxVolumeFinder(double length2, double width2) {
+		length = length2;
+		width = width2;
+	}
+
 /**------------------
    set/get methods
    ------------------
@@ -14,7 +19,7 @@ public class MaxVolumeFinder {
 		width = w;
 	}
 	
-	public static double getWidth() {
+	public double getWidth() {
 		return width;
 	}
 	
@@ -49,13 +54,13 @@ public class MaxVolumeFinder {
 	public void findMax() {
 		double temp = 0;
 		double boxVolume = 0;
-				do {
-					temp = boxVolume;
-					sqrSide += 0.01;
-					boxVolume = (length -  2 * sqrSide) *  (width -  2 * sqrSide) * sqrSide;
-				}	
-				while(temp < boxVolume);
-				sqrSide -= 0.01; 		//	since do-while loop was used must subtract last iteration
+		do {
+			temp = boxVolume;
+			sqrSide += 0.01;
+			boxVolume = (length -  2 * sqrSide) *  (width -  2 * sqrSide) * sqrSide;
+		}	
+		while(temp < boxVolume);
+		sqrSide -= 0.01; 		//	since do-while loop was used must subtract last iteration
 		volume = boxVolume;
 	}
 	
@@ -64,13 +69,14 @@ public class MaxVolumeFinder {
 		width = wdth;
 		double temp = 0;
 		double boxVolume = 0;
-				do {
-					temp = boxVolume;
-					sqrSide += 0.01;
-					boxVolume = (length -  2 * sqrSide) *  (width -  2 * sqrSide) * sqrSide;
-				}	
-				while(temp < boxVolume);
-				sqrSide -= 0.01; 		//	since do-while loop was used must subtract last iteration
+		do {
+			temp = boxVolume;
+			sqrSide += 0.01;
+			boxVolume = (length -  2 * sqrSide) *  (width -  2 * sqrSide) * sqrSide;
+		}	
+		while(temp < boxVolume);
+		sqrSide -= 0.01; 		//	since do-while loop was used must subtract last iteration
 		volume = boxVolume;
 	}
+	
 }
